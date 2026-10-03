@@ -1,0 +1,237 @@
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    margin:0;
+    font-family:'Poppins',sans-serif;
+    color:white;
+    background-image:url("images/torii.jpg");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+    background-color:#12091f;
+}
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 40px;
+    background:rgba(20,15,35,.4);
+    backdrop-filter:blur(8px);
+    position:sticky;
+    top:0;
+    z-index:10;
+}
+
+nav h2{
+    color:#F8C84A;
+    font-size:32px;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:30px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+}
+
+nav a:hover{
+    color:#C084FC;
+}
+
+.hi{
+    height:100vh;
+    display:flex;
+    align-items:center;
+    background:linear-gradient(to right,rgba(18,9,31,.8),transparent);
+}
+
+.hi div{
+    width:430px;
+}
+
+.hi p:first-child{
+    color:#D8B4FE;
+    font-size:14px;
+    letter-spacing:3px;
+}
+
+.hi h1{
+    font-size:72px;
+    color:#F8C84A;
+}
+
+.hi h3{
+    font-size:24px;
+    margin:10px 0;
+}
+
+.hi p:last-of-type{
+    color:#E5E7EB;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:18px;
+    padding:12px 24px;
+    background:#7C3AED;
+    border-radius:25px;
+    color:white;
+    text-decoration:none;
+}
+
+.btn:hover{
+    background:#A855F7;
+}
+
+section{
+    padding:40px 50px;
+}
+
+section h2{
+    color:#F8C84A;
+    margin-bottom:15px;
+}
+
+.hello{
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr 1fr;
+    gap:15px;
+}
+
+.hello > div{
+    background:rgba(55,38,95,.55);
+    border-radius:12px;
+}
+
+.poster{
+    height:220px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.poster img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    display:block;
+}
+
+.hello h3{
+    text-align:center;
+    padding:10px;
+    font-size:16px;
+}
+
+.data{
+    display:flex;
+    gap:15px;
+}
+
+.data div{
+    flex:1;
+    padding:20px;
+    text-align:center;
+    background:rgba(55,38,95,.55);
+    border-radius:12px;
+}
+
+.data h2{
+    color:#C084FC;
+}
+
+table{
+    width:100%;
+    background:rgba(55,38,95,.55);
+    border-radius:12px;
+    overflow:hidden;
+}
+
+th{
+    background:#6D28D9;
+}
+
+th,td{
+    padding:12px;
+    text-align:center;
+    border:1px solid rgba(255,255,255,.1);
+}
+
+.quiz{
+    text-align:center;
+}
+
+.quiz p{
+    margin-bottom:15px;
+}
+
+.quiz input{
+    display:none;
+}
+
+.quiz label{
+    display:block;
+    width:320px;
+    margin:8px auto;
+    padding:12px;
+    background:rgba(55,38,95,.55);
+    border-radius:10px;
+    cursor:pointer;
+}
+
+.quiz input:checked + label{
+    background:#7C3AED;
+}
+
+.card{
+    display:none;
+    width:320px;
+    margin:20px auto;
+    padding:15px;
+    background:rgba(55,38,95,.75);
+    border-radius:12px;
+}
+
+.card img{
+    width:160px;
+    height:160px;
+    object-fit:cover;
+    border-radius:50%;
+    display:block;
+    margin:auto;
+}
+
+#luffy:checked ~ .luffy.card{
+    display:block;
+}
+
+#naruto:checked ~ .naruto.card{
+    display:block;
+}
+
+#levi:checked ~ .levi.card{
+    display:block;
+}
+
+#gojo:checked ~ .gojo.card{
+    display:block;
+}
+
+footer{
+    text-align:center;
+    padding:20px;
+    background:rgba(20,15,35,.4);
+}
+
+footer h2{
+    color:#F8C84A;
+    margin-bottom:5px;
+}

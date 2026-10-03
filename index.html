@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>TOBIRA</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+
+        html{
+            scroll-behavior:smooth;
+        }
+
+        body{
+            margin:0;
+            font-family:'Poppins',sans-serif;
+            color:white;
+            background-image:url("images/tor.jpg");
+            background-size:cover;
+            background-position:center;
+            background-repeat:no-repeat;
+            background-attachment:fixed;
+            background-color:#12091f;
+        }
+
+        nav{
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            padding:15px 40px;
+            background:rgba(20,15,35,.4);
+            backdrop-filter:blur(8px);
+            position:sticky;
+            top:0;
+            z-index:10;
+        }
+
+        nav h2{
+            color:#F8C84A;
+            font-size:32px;
+        }
+
+        nav ul{
+            display:flex;
+            list-style:none;
+            gap:30px;
+        }
+
+        nav a{
+            color:white;
+            text-decoration:none;
+        }
+
+        nav a:hover{
+            color:#C084FC;
+        }
+
+        .hi{
+            height:100vh;
+            display:flex;
+            align-items:center;
+            background:linear-gradient(to right,rgba(18,9,31,.8),transparent);
+        }
+
+        .hi div{
+            width:430px;
+        }
+
+        .hi p:first-child{
+            color:#D8B4FE;
+            font-size:14px;
+            letter-spacing:3px;
+        }
+
+        .hi h1{
+            font-size:72px;
+            color:#F8C84A;
+        }
+
+        .hi h3{
+            font-size:24px;
+            margin:10px 0;
+        }
+
+        .hi p:last-of-type{
+            color:#E5E7EB;
+        }
+
+        .btn{
+            display:inline-block;
+            margin-top:18px;
+            padding:12px 24px;
+            background:#7C3AED;
+            border-radius:25px;
+            color:white;
+            text-decoration:none;
+        }
+
+        .btn:hover{
+            background:#A855F7;
+        }
+
+        section{
+            padding:40px 50px;
+        }
+
+        section h2{
+            color:#F8C84A;
+            margin-bottom:15px;
+        }
+
+        .hello{
+            display:grid;
+            grid-template-columns:1fr 1fr 1fr 1fr;
+            gap:15px;
+        }
+
+        .hello > div{
+            background:rgba(55,38,95,.55);
+            border-radius:12px;
+        }
+
+        .poster{
+            height:220px;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+        }
+
+        .poster img{
+            width:100%;
+            height:100%;
+            object-fit:contain;
+            display:block;
+        }
+
+        .hello h3{
+            text-align:center;
+            padding:10px;
+            font-size:16px;
+        }
+
+        .data{
+            display:flex;
+            gap:15px;
+        }
+
+        .data div{
+            flex:1;
+            padding:20px;
+            text-align:center;
+            background:rgba(55,38,95,.55);
+            border-radius:12px;
+        }
+
+        .data h2{
+            color:#C084FC;
+        }
+
+        table{
+            width:100%;
+            background:rgba(55,38,95,.55);
+            border-radius:12px;
+            overflow:hidden;
+        }
+
+        th{
+            background:#6D28D9;
+        }
+
+        th,td{
+            padding:12px;
+            text-align:center;
+            border:1px solid rgba(255,255,255,.1);
+        }
+
+        .quiz{
+            text-align:center;
+        }
+
+        .quiz p{
+            margin-bottom:15px;
+        }
+
+        .quiz input{
+            display:none;
+        }
+
+        .quiz label{
+            display:block;
+            width:320px;
+            margin:8px auto;
+            padding:12px;
+            background:rgba(55,38,95,.55);
+            border-radius:10px;
+            cursor:pointer;
+        }
+
+        .quiz input:checked + label{
+            background:#7C3AED;
+        }
+
+        .card{
+            display:none;
+            width:320px;
+            margin:20px auto;
+            padding:15px;
+            background:rgba(55,38,95,.75);
+            border-radius:12px;
+        }
+
+        .card img{
+            width:160px;
+            height:160px;
+            object-fit:cover;
+            border-radius:50%;
+            display:block;
+            margin:auto;
+        }
+
+        #luffy:checked ~ .luffy.card{
+            display:block;
+        }
+
+        #naruto:checked ~ .naruto.card{
+            display:block;
+        }
+
+        #levi:checked ~ .levi.card{
+            display:block;
+        }
+
+        #gojo:checked ~ .gojo.card{
+            display:block;
+        }
+
+        footer{
+            text-align:center;
+            padding:20px;
+            background:rgba(20,15,35,.4);
+        }
+
+        footer h2{
+            color:#F8C84A;
+            margin-bottom:5px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<nav>
+    <h2>TOBIRA</h2>
+
+    <ul>
+        <li><a href="#">Homeeeee</a></li>
+        <li><a href="#quiz">Quizzzzzz</a></li>
+        <li><a href="#anime">Animeeeee</a></li>
+        <li><a href="#guide">Guidddeeee</a></li>
+    </ul>
+</nav>
+
+<section class="hi">
+    <div>
+        <p>ANIME DISCOVERY</p>
+
+        <h1>TOBIRA</h1>
+
+        <h3>Open the door to your first anime adventure.</h3>
+
+        <p>
+            Meet legendary characters, explore iconic worlds and
+            discover the perfect anime for your personality.
+        </p>
+
+        <a href="#quiz" class="btn">Begin Journey</a>
+    </div>
+</section>
+
+<section id="quiz" class="quiz">
+
+    <h2>Which Anime Character Are You?</h2>
+
+    <p>Choose one option</p>
+
+    <input type="radio" id="luffy" name="hero">
+    <label for="luffy">🏴 Courage & Adventure</label>
+
+    <input type="radio" id="naruto" name="hero">
+    <label for="naruto">❤️ Kindness & Loyalty</label>
+
+    <input type="radio" id="levi" name="hero">
+    <label for="levi">🧠 Intelligence & Strategy</label>
+
+    <input type="radio" id="gojo" name="hero">
+    <label for="gojo">✨ Confidence & Charisma</label>
+
+
+    <div class="luffy card">
+        <img src="images/luffy.jpg" alt="Luffy">
+
+        <h3>Monkey D. Luffy</h3>
+
+        <p>Start with <b>One Piece</b></p>
+    </div>
+
+
+    <div class="naruto card">
+        <img src="images/n.jpg" alt="Naruto">
+
+        <h3>Naruto Uzumaki</h3>
+
+        <p>Start with <b>Naruto</b></p>
+    </div>
+
+
+    <div class="levi card">
+        <img src="images/levi.jpg" alt="Levi">
+
+        <h3>Levi Ackerman</h3>
+
+        <p>Start with <b>Attack on Titan</b></p>
+    </div>
+
+
+    <div class="gojo card">
+        <img src="images/gj.jpg" alt="Gojo">
+
+        <h3>Satoru Gojo</h3>
+
+        <p>Start with <b>Jujutsu Kaisen</b></p>
+    </div>
+
+</section>
+
+
+<section id="anime">
+
+    <h2>Anime Shrines</h2>
+
+    <div class="hello">
+
+        <div>
+            <div class="poster">
+                <img src="images/n.jpg" alt="Naruto">
+            </div>
+            <h3>Naruto</h3>
+        </div>
+
+        <div>
+            <div class="poster">
+                <img src="images/onepiecee.jpg" alt="One Piece">
+            </div>
+            <h3>One Piece</h3>
+        </div>
+
+        <div>
+            <div class="poster">
+                <img src="images/ds.jpg" alt="Demon Slayer">
+            </div>
+            <h3>Demon Slayer</h3>
+        </div>
+
+        <div>
+            <div class="poster">
+                <img src="images/jjkk.jpg" alt="Jujutsu Kaisen">
+            </div>
+            <h3>Jujutsu Kaisen</h3>
+        </div>
+
+        <div>
+            <div class="poster">
+                <img src="images/AOTT.jpg" alt="Attack on Titan">
+            </div>
+            <h3>Attack on Titan</h3>
+        </div>
+
+        <div>
+            <div class="poster">
+                <img src="images/dt.jpg" alt="Death Note">
+            </div>
+            <h3>Death Note</h3>
+        </div>
+
+        <div>
+            <div class="poster">
+                <img src="images/db.jpg" alt="Dragon Ball">
+            </div>
+            <h3>Dragon Ball</h3>
+        </div>
+
+        <div>
+            <div class="poster">
+                <img src="images/spyfamily.jpg" alt="Spy x Family">
+            </div>
+            <h3>Spy × Family</h3>
+        </div>
+
+        <div>
+            <div class="poster">
+                <img src="images/ha.jpg" alt="Haikyuu">
+            </div>
+            <h3>Haikyuu!!</h3>
+        </div>
+
+        <div>
+            <div class="poster">
+                <img src="images/tokyo.jpg" alt="Tokyo Revengers">
+            </div>
+            <h3>Tokyo Revengers</h3>
+        </div>
+
+        <div>
+            <div class="poster">
+                <img src="images/m.jpg" alt="My Hero Academia">
+            </div>
+            <h3>My Hero Academia</h3>
+        </div>
+
+        <div>
+            <div class="poster">
+                <img src="images/ch.jpg" alt="Chainsaw Man">
+            </div>
+            <h3>Chainsaw Man</h3>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="data">
+
+    <div>
+        <h2>12</h2>
+        <p>Anime</p>
+    </div>
+
+    <div>
+        <h2>64</h2>
+        <p>Characters</p>
+    </div>
+
+    <div>
+        <h2>8</h2>
+        <p>Genres</p>
+    </div>
+
+</section>
+
+
+<section id="guide">
+
+    <h2>Beginner Anime Guide</h2>
+
+    <table>
+
+        <tr>
+            <th>Anime</th>
+            <th>Genre</th>
+            <th>Episodes</th>
+            <th>Beginner</th>
+        </tr>
+
+        <tr>
+            <td>Naruto</td>
+            <td>Action</td>
+            <td>220</td>
+            <td>★★★★</td>
+        </tr>
+
+        <tr>
+            <td>Death Note</td>
+            <td>Mystery</td>
+            <td>37</td>
+            <td>★★★★★</td>
+        </tr>
+
+        <tr>
+            <td>Haikyuu!!</td>
+            <td>Sports</td>
+            <td>85</td>
+            <td>★★★★★</td>
+        </tr>
+
+        <tr>
+            <td>Demon Slayer</td>
+            <td>Fantasy</td>
+            <td>55</td>
+            <td>★★★★</td>
+        </tr>
+
+        <tr>
+            <td>Spy × Family</td>
+            <td>Comedy</td>
+            <td>37</td>
+            <td>★★★★</td>
+        </tr>
+
+    </table>
+
+</section>
+
+
+<footer>
+
+    <h2>TOBIRA</h2>
+
+    <p>Open the gate. Begin your anime journey.</p>
+
+</footer>
+
+</body>
+</html>
